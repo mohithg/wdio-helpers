@@ -4,8 +4,17 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 /**
+ * @function load
+ * @desc loads the url in the browser.
+ * @param {string} url - The url to navigate to.
+ */
+var load = exports.load = function load(url) {
+  browser.url(url);
+};
+
+/**
  * @function wait
- * @desc Accepts selector to wait for the element to appear on the screen and scroll the page to that element in the screen.
+ * @desc Accepts selector to wait for the element to appear in the DOM and scroll the page to that element in the screen.
  * @param {string} selector - The Selector element.
  */
 var wait = exports.wait = function wait(selector) {
@@ -15,7 +24,7 @@ var wait = exports.wait = function wait(selector) {
 
 /**
  * @function click
- * @desc If there is multiple elememts with the same Selector it will choose based on the index.
+ * @desc clicks the selector specified and if there are multiple elememts with the same selector it will choose based on the index. Note that it waits until selector appears in the DOM.
  * @param {string} selector - The Selector element.
  * @param {number} [index = 0] - index number
  */
@@ -81,8 +90,9 @@ var findElementFromGroupWithText = exports.findElementFromGroupWithText = functi
 
 var Helpers = {
   click: click,
-  setValue: setValue,
   findElementFromGroupWithText: findElementFromGroupWithText,
+  load: load,
+  setValue: setValue,
   wait: wait,
   waitForElementToGo: waitForElementToGo
 };
