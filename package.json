@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "mkdir build | node_modules/.bin/babel src/helpers.js > build/helpers.js",
-    "generate_doc": "node_modules/.bin/jsdoc .  -t node_modules/docdash"
+    "generate_doc": "node_modules/.bin/jsdoc -c jsdoc.conf.json * -t node_modules/docdash",
+    "generate_api_doc": "jsdoc2md src/helpers.js"
   },
   "repository": {
     "type": "git",

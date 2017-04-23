@@ -8,8 +8,7 @@ These helper functions can be used with [WDIO](http://webdriver.io/).
 This project uses [node](https://nodejs.org/en/) and [npm](https://www.npmjs.com/). Go check them out if you don't have them locally installed.
 - `npm install wdio-helpers --save`
 
-# Usage
-- ES6 Way
+# Usage ES6 Way
 ```javascript
 import {load, click} from 'wdio-helpers';
 
@@ -21,7 +20,7 @@ describe ('Test Suite', () => {
 });
 ```
 
-- ES5 Way
+# Usage ES5 Way
 ```javascript
 var helpers = require('wdio-helpers');
 
@@ -36,7 +35,8 @@ describe ('Test Suite', function() {
 For a working demo see [here](https://github.com/mohithg/generic-automation).
 
 ## Resources
-- [API Reference](https://github.com/mohithg/wdio-helpers/wiki)
+- [API Reference](https://mohithg.github.io/wdio-helpers/)
+- [Wiki](https://github.com/mohithg/wdio-helpers/wiki/API-Reference)
 
 ## Contributions
 Feel free to contribute to this repo.
