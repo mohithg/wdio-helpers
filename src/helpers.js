@@ -1,6 +1,6 @@
 /**
  * @function wait
- * Accepts selector to wait for the element to appear on the screen and scroll the page to that element in the screen.
+ * @desc Accepts selector to wait for the element to appear on the screen and scroll the page to that element in the screen.
  * @param {string} selector - The Selector element.
  */
 export const wait = (selector) => {
@@ -10,7 +10,7 @@ export const wait = (selector) => {
 
 /**
  * @function click
- * If there is multiple elememts with the same Selector it will choose based on the index.
+ * @desc If there is multiple elememts with the same Selector it will choose based on the index.
  * @param {string} selector - The Selector element.
  * @param {number} [index = 0] - index number
  */
@@ -21,10 +21,10 @@ export const click = (selector, index = 0) => {
 
 /**
  * @function setValue
- * Set Value in any selector
+ * @desc Set Value in any selector
  * @param {string} selector - The Selector element.
  * @param {number} [index = 0] - index number
- * @param {number} [value = ''] - Value has to be number
+ * @param {string} [value = ''] - Value to be set in the selector
  */
 export const setValue = (selector, index = 0, value = '') => {
   wait(selector);
@@ -34,8 +34,7 @@ export const setValue = (selector, index = 0, value = '') => {
 
 /**
  * @function waitForElementToGo
- * Waits until element is not visible in DOM
- * Selector will choose based on the index.
+ * @desc Waits until element is not visible in DOM. Selector will choose based on the index.
  * @param {string} selector - The Selector element.
  * @param {number} [index = 0] - index number
  */
@@ -51,6 +50,7 @@ export const waitForElementToGo = (selector, index = 0) => {
 
 /**
  * @function findElementFromGroupWithText()
+ * @desc Finds and returns the element that matches the text from the group of selectors
  * @param {string} groupSelector - The groupSelector element.
  * @param {string} textToSearch - Enter the text to search in elements
  * @return {element} element - The element which matches the textToSearch from group of groupSelector or returns null if nothing is found
@@ -66,3 +66,14 @@ export const findElementFromGroupWithText = (groupSelector, textToSearch) => {
   }
   return null;
 }
+
+const Helpers = {
+  click,
+  setValue,
+  findElementFromGroupWithText,
+  wait,
+  waitForElementToGo,
+};
+
+export default Helpers;
+
