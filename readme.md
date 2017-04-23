@@ -1,3 +1,6 @@
+## WDIO Helpers
+![alt wdio helpers](https://raw.githubusercontent.com/mohithg/mohithg.github.io/master/wdio-helpers/wdiohelpers.png)
+
 ## Functions
 
 <dl>
