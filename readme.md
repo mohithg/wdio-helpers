@@ -1,12 +1,12 @@
 ## WDIO Helpers
-<a href="http://www.mohithg.com/wdio-helpers/global.html">![alt wdio helpers](https://raw.githubusercontent.com/mohithg/mohithg.github.io/master/wdio-helpers/wdiohelpers.png)</a>
+<a href="https://mohithg.github.io/wdio-helpers/global.html">![alt wdio helpers](https://raw.githubusercontent.com/mohithg/mohithg.github.io/master/wdio-helpers/wdiohelpers.png)</a>
 
 # Description
 These helper functions can be used with [WDIO](http://webdriver.io/).
 
 # Install
-This project uses [https://nodejs.org/en/](node) and [https://www.npmjs.com/](npm). Go check them out if you don't have them locally installed.
-`npm install wdio-helpers --save`
+This project uses [node](https://nodejs.org/en/) and [npm](https://www.npmjs.com/). Go check them out if you don't have them locally installed.
+- `npm install wdio-helpers --save`
 
 # Usage
 - ES6 Way
@@ -36,7 +36,7 @@ describe ('Test Suite', function() {
 For a working demo see [here](https://github.com/mohithg/generic-automation).
 
 ## Resources
-- [https://github.com/mohithg/wdio-helpers/wiki](API Reference)
+- [API Reference](https://github.com/mohithg/wdio-helpers/wiki)
 
 ## Contributions
 Feel free to contribute to this repo.
