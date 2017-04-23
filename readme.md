@@ -39,5 +39,6 @@ For a working demo see [here](https://github.com/mohithg/generic-automation).
 - [Wiki](https://github.com/mohithg/wdio-helpers/wiki/API-Reference)
 
 ## Contributions
-Feel free to contribute to this repo.
+There are lot of helpers to be written. Feel free to contribute to this repo.
+For more help reach out to [me](email:mohithgm@gmail.com)
 
