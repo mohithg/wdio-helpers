@@ -1,3 +1,4 @@
+import _ from 'lodash';
 /**
  * @function load
  * @desc loads the url in the browser.
@@ -76,10 +77,25 @@ export const findElementFromGroupWithText = (groupSelector, textToSearch) => {
   return null;
 }
 
+/**
+ * @function logConsoleOutput(type)
+ * @desc Returns the console errors from browser
+ * @param {string} type - Type can be INFO, WARNING, SEVERE. If no type is provided, all messages are returned.
+ * @return {array} array - Returns the console errors from browser
+ */
+export const logConsoleOutput = (type) => {
+  let data = browser.log('browser').value;
+  if (type) {
+    data = _.filter(data, each => each.level == type)
+  }
+  return _.map(data, field => field.message);
+};
+
 const Helpers = {
   click,
   findElementFromGroupWithText,
   load,
+  logConsoleOutput,
   setValue,
   wait,
   waitForElementToGo,
