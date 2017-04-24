@@ -3,6 +3,14 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.logConsoleOutput = exports.findElementFromGroupWithText = exports.waitForElementToGo = exports.setValue = exports.click = exports.wait = exports.load = undefined;
+
+var _lodash = require('lodash');
+
+var _lodash2 = _interopRequireDefault(_lodash);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 /**
  * @function load
  * @desc loads the url in the browser.
@@ -61,7 +69,7 @@ var waitForElementToGo = exports.waitForElementToGo = function waitForElementToG
   var index = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
 
   browser.waitUntil(function () {
-    if (!_.isEmpty($$(selector))) {
+    if (!_lodash2.default.isEmpty($$(selector))) {
       return $$(selector)[index] && !$$(selector)[index].isVisible();
     } else {
       return true;
@@ -88,10 +96,29 @@ var findElementFromGroupWithText = exports.findElementFromGroupWithText = functi
   return null;
 };
 
+/**
+ * @function logConsoleOutput(type)
+ * @desc Returns the console errors from browser
+ * @param {string} type - Type can be INFO, WARNING, SEVERE. If no type is provided, all messages are returned.
+ * @return {array} array - Returns the console errors from browser
+ */
+var logConsoleOutput = exports.logConsoleOutput = function logConsoleOutput(type) {
+  var data = browser.log('browser').value;
+  if (type) {
+    data = _lodash2.default.filter(data, function (each) {
+      return each.level == type;
+    });
+  }
+  return _lodash2.default.map(data, function (field) {
+    return field.message;
+  });
+};
+
 var Helpers = {
   click: click,
   findElementFromGroupWithText: findElementFromGroupWithText,
   load: load,
+  logConsoleOutput: logConsoleOutput,
   setValue: setValue,
   wait: wait,
   waitForElementToGo: waitForElementToGo
