@@ -35,7 +35,7 @@ describe ('Test Suite', function() {
 For a working demo see [here](https://github.com/mohithg/generic-automation).
 
 ## Resources
-- [API Reference](https://mohithg.github.io/wdio-helpers/)
+- [API Reference](http://mohithg.com/wdio-helpers/)
 - [Wiki](https://github.com/mohithg/wdio-helpers/wiki/API-Reference)
 
 ## Contributions
