@@ -40,5 +40,5 @@ For a working demo see [here](https://github.com/mohithg/generic-automation).
 
 ## Contributions
 There are lot of helpers to be written. Feel free to contribute to this repo.
-For more help reach out to [me](email:mohithgm@gmail.com)
+For more help reach out to [me](mailto:mohithgm@gmail.com)
 
