@@ -1,5 +1,5 @@
 ## WDIO Helpers
-<a href="https://mohithg.github.io/wdio-helpers/global.html">![alt wdio helpers](https://raw.githubusercontent.com/mohithg/mohithg.github.io/master/wdio-helpers/wdiohelpers.png)</a>
+<a href="https://mohithg.github.io/wdio-helpers/global.html">![alt wdio helpers](https://raw.githubusercontent.com/mohithg/wdio-helpers/master/docs/wdiohelpers.png)</a>
 
 # Description
 These helper functions can be used with [WDIO](http://webdriver.io/).
