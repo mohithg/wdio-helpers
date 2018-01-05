@@ -9,6 +9,30 @@ export const load = (url) => {
 }
 
 /**
+ * @function waitForUrl
+ * @desc waits until the url is loaded.
+ * @param {string} url - The url to navigate to.
+ */
+/**
+* Waits until the url is loaded, then continues
+* Times out after timeout mentioned in configs
+* @param {String} url - URL to check if loaded
+* @param {Number} timeout - waiting time for url to load 
+* @param {regex} regex - Regex to match with url
+*/
+export const waitForUrl = (url, timeout, regex = false) => {
+  browser.waitUntil(() => {
+    if (regex) {
+      return url.test(browser.getUrl());
+    }
+    return browser.getUrl() === url;
+  },
+  timeout,
+  `***Expected ${url} instead of ${browser.getUrl()}***`
+  );
+};
+
+/**
  * @function wait
  * @desc Accepts selector to wait for the element to appear in the DOM and scroll the page to that element in the screen.
  * @param {string} selector - The Selector element.

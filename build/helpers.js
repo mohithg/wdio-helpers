@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.logConsoleOutput = exports.findElementFromGroupWithText = exports.waitForElementToGo = exports.setValue = exports.click = exports.wait = exports.load = undefined;
+exports.logConsoleOutput = exports.findElementFromGroupWithText = exports.waitForElementToGo = exports.setValue = exports.click = exports.wait = exports.waitForUrl = exports.load = undefined;
 
 var _lodash = require('lodash');
 
@@ -18,6 +18,29 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  */
 var load = exports.load = function load(url) {
   browser.url(url);
+};
+
+/**
+ * @function waitForUrl
+ * @desc waits until the url is loaded.
+ * @param {string} url - The url to navigate to.
+ */
+/**
+* Waits until the url is loaded, then continues
+* Times out after timeout mentioned in configs
+* @param {String} url - URL to check if loaded
+* @param {Number} timeout - waiting time for url to load 
+* @param {regex} regex - Regex to match with url
+*/
+var waitForUrl = exports.waitForUrl = function waitForUrl(url, timeout) {
+  var regex = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+
+  browser.waitUntil(function () {
+    if (regex) {
+      return url.test(browser.getUrl());
+    }
+    return browser.getUrl() === url;
+  }, timeout, '***Expected ' + url + ' instead of ' + browser.getUrl() + '***');
 };
 
 /**
