@@ -111,7 +111,8 @@ var waitForElementToGo = exports.waitForElementToGo = function waitForElementToG
 
   browser.waitUntil(function () {
     if (!_lodash2.default.isEmpty($$(selector))) {
-      return $$(selector)[index] && !$$(selector)[index].isVisible();
+      var element = $$(selector)[index];
+      return element.isVisible();
     } else {
       return true;
     }
