@@ -76,9 +76,9 @@ var click = exports.click = function click(selector) {
 var clickWithText = exports.clickWithText = function clickWithText(selector, text) {
   var index = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
 
-  var elements = findElementFromGroupWithText(selector, text, index);
-  if (elements) {
-    $$(elements)[index].click();
+  var element = findElementFromGroupWithText(selector, text, index);
+  if (element) {
+    element.click();
   } else {
     new Error('No Element with text found');
   }
@@ -126,7 +126,9 @@ var waitForElementToGo = exports.waitForElementToGo = function waitForElementToG
  * @param {number} [index = 0] - index number
  * @return {element} element - The element which matches the textToSearch from group of groupSelector or returns null if nothing is found
  */
-var findElementFromGroupWithText = exports.findElementFromGroupWithText = function findElementFromGroupWithText(groupSelector, textToSearch, index) {
+var findElementFromGroupWithText = exports.findElementFromGroupWithText = function findElementFromGroupWithText(groupSelector, textToSearch) {
+  var index = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
+
   wait(groupSelector);
   var group = $$(groupSelector);
   var elements = [];

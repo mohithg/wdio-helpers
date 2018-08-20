@@ -61,13 +61,13 @@ export const click = (selector, index = 0) => {
  * @param {number} [index = 0] - index number
  */
 export const clickWithText = (selector, text, index = 0) => {
-  const elements = findElementFromGroupWithText(selector, text, index)
-  if (elements) {
-    $$(elements)[index].click();
+  const element = findElementFromGroupWithText(selector, text, index);
+  if (element) {
+    element.click();
   } else {
     new Error('No Element with text found');
   }
-}
+};
 
 /**
  * @function setValue
@@ -106,7 +106,7 @@ export const waitForElementToGo = (selector, index = 0) => {
  * @param {number} [index = 0] - index number
  * @return {element} element - The element which matches the textToSearch from group of groupSelector or returns null if nothing is found
  */
-export const findElementFromGroupWithText = (groupSelector, textToSearch, index) => {
+export const findElementFromGroupWithText = (groupSelector, textToSearch, index = 0) => {
   wait(groupSelector);
   const group = $$(groupSelector);
   let elements = [];
