@@ -91,7 +91,8 @@ export const setValue = (selector, index = 0, value = '') => {
 export const waitForElementToGo = (selector, index = 0) => {
   browser.waitUntil(() => {
     if (!_.isEmpty($$(selector))) {
-    return $$(selector)[index] && !$$(selector)[index].isVisible();
+      const element = $$(selector)[index];
+      return element && element.isVisible();
     } else {
         return true;
     }
