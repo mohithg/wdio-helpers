@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.logConsoleOutput = exports.findElementFromGroupWithText = exports.waitForElementToGo = exports.setValue = exports.click = exports.wait = exports.waitForUrl = exports.load = undefined;
+exports.logConsoleOutput = exports.findElementFromGroupWithText = exports.waitForElementToGo = exports.setValue = exports.clickWithText = exports.click = exports.wait = exports.waitForUrl = exports.load = undefined;
 
 var _lodash = require('lodash');
 
@@ -67,6 +67,24 @@ var click = exports.click = function click(selector) {
 };
 
 /**
+ * @function clickWithText
+ * @desc finds the selector with text and clicks and if there are multiple elememts with the same text, it will click based on the index. Note that it waits until selector appears in the DOM.
+ * @param {string} selector - Selector for the element.
+ * @param {string} text - The text element.
+ * @param {number} [index = 0] - index number
+ */
+var clickWithText = exports.clickWithText = function clickWithText(selector, text) {
+  var index = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
+
+  var element = findElementFromGroupWithText(selector, text, index);
+  if (element) {
+    click(element, index);
+  } else {
+    new Error('No Element with text found');
+  }
+};
+
+/**
  * @function setValue
  * @desc Set Value in any selector
  * @param {string} selector - The Selector element.
@@ -105,16 +123,21 @@ var waitForElementToGo = exports.waitForElementToGo = function waitForElementToG
  * @desc Finds and returns the element that matches the text from the group of selectors
  * @param {string} groupSelector - The groupSelector element.
  * @param {string} textToSearch - Enter the text to search in elements
+ * @param {number} [index = 0] - index number
  * @return {element} element - The element which matches the textToSearch from group of groupSelector or returns null if nothing is found
  */
-var findElementFromGroupWithText = exports.findElementFromGroupWithText = function findElementFromGroupWithText(groupSelector, textToSearch) {
+var findElementFromGroupWithText = exports.findElementFromGroupWithText = function findElementFromGroupWithText(groupSelector, textToSearch, index) {
   wait(groupSelector);
   var group = $$(groupSelector);
+  var elements = [];
   for (var i = 0; i < group.length; i++) {
     var element = group[i];
     if (element.getText().includes(textToSearch)) {
-      return element;
+      elements = _lodash2.default.concat(elements, element);
     }
+  }
+  if (!_lodash2.default.isEmpty(elements)) {
+    return elements[index];
   }
   return null;
 };
@@ -139,6 +162,7 @@ var logConsoleOutput = exports.logConsoleOutput = function logConsoleOutput(type
 
 var Helpers = {
   click: click,
+  clickWithText: clickWithText,
   findElementFromGroupWithText: findElementFromGroupWithText,
   load: load,
   logConsoleOutput: logConsoleOutput,
