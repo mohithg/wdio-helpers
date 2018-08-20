@@ -54,6 +54,22 @@ export const click = (selector, index = 0) => {
 }
 
 /**
+ * @function clickWithText
+ * @desc finds the selector with text and clicks and if there are multiple elememts with the same text, it will click based on the index. Note that it waits until selector appears in the DOM.
+ * @param {string} selector - Selector for the element.
+ * @param {string} text - The text element.
+ * @param {number} [index = 0] - index number
+ */
+export const clickWithText = (selector, text, index = 0) => {
+  const element = findElementFromGroupWithText(selector, text, index)
+  if (element) {
+    click(element, index)
+  } else {
+    new Error('No Element with text found');
+  }
+}
+
+/**
  * @function setValue
  * @desc Set Value in any selector
  * @param {string} selector - The Selector element.
@@ -87,16 +103,21 @@ export const waitForElementToGo = (selector, index = 0) => {
  * @desc Finds and returns the element that matches the text from the group of selectors
  * @param {string} groupSelector - The groupSelector element.
  * @param {string} textToSearch - Enter the text to search in elements
+ * @param {number} [index = 0] - index number
  * @return {element} element - The element which matches the textToSearch from group of groupSelector or returns null if nothing is found
  */
-export const findElementFromGroupWithText = (groupSelector, textToSearch) => {
+export const findElementFromGroupWithText = (groupSelector, textToSearch, index) => {
   wait(groupSelector);
   const group = $$(groupSelector);
+  let elements = [];
   for (let i = 0; i < group.length; i++) {
     const element = group[i];
     if (element.getText().includes(textToSearch)) {
-      return element;
+      elements = _.concat(elements, element);
     }
+  }
+  if (!_.isEmpty(elements)) {
+    return elements[index];
   }
   return null;
 }
@@ -117,6 +138,7 @@ export const logConsoleOutput = (type) => {
 
 const Helpers = {
   click,
+  clickWithText,
   findElementFromGroupWithText,
   load,
   logConsoleOutput,
