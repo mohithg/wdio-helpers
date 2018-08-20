@@ -76,9 +76,9 @@ var click = exports.click = function click(selector) {
 var clickWithText = exports.clickWithText = function clickWithText(selector, text) {
   var index = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
 
-  var element = findElementFromGroupWithText(selector, text, index);
-  if (element) {
-    click(element, index);
+  var elements = findElementFromGroupWithText(selector, text, index);
+  if (elements) {
+    $$(elements)[index].click();
   } else {
     new Error('No Element with text found');
   }

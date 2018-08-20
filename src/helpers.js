@@ -61,9 +61,9 @@ export const click = (selector, index = 0) => {
  * @param {number} [index = 0] - index number
  */
 export const clickWithText = (selector, text, index = 0) => {
-  const element = findElementFromGroupWithText(selector, text, index)
-  if (element) {
-    click(element, index)
+  const elements = findElementFromGroupWithText(selector, text, index)
+  if (elements) {
+    $$(elements)[index].click();
   } else {
     new Error('No Element with text found');
   }
