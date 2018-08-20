@@ -22,7 +22,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#click">click</a></li><li><a href="global.html#findElementFromGroupWithText()">findElementFromGroupWithText()</a></li><li><a href="global.html#load">load</a></li><li><a href="global.html#logConsoleOutputtype">logConsoleOutput</a></li><li><a href="global.html#setValue">setValue</a></li><li><a href="global.html#wait">wait</a></li><li><a href="global.html#waitForElementToGo">waitForElementToGo</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#click">click</a></li><li><a href="global.html#clickWithText">clickWithText</a></li><li><a href="global.html#findElementFromGroupWithText()">findElementFromGroupWithText()</a></li><li><a href="global.html#load">load</a></li><li><a href="global.html#logConsoleOutputtype">logConsoleOutput</a></li><li><a href="global.html#setValue">setValue</a></li><li><a href="global.html#wait">wait</a></li><li><a href="global.html#waitForElementToGo">waitForElementToGo</a></li><li><a href="global.html#waitForUrl">waitForUrl</a></li></ul>
 </nav>
 
 <div id="main">
@@ -106,6 +106,74 @@
     
 
     
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<h4 class="name" id="waitForUrl"><span class="type-signature">(constant) </span>waitForUrl<span class="type-signature"></span></h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="helpers.js.html">helpers.js</a>, <a href="helpers.js.html#line23">line 23</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    Waits until the url is loaded, then continues
+Times out after timeout mentioned in configs
+</div>
+
+
+
+
+
+
+
+
+        
+    
 
     
         <h3 class="subsection-title">Methods</h3>
@@ -127,7 +195,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="helpers.js.html">helpers.js</a>, <a href="helpers.js.html#line21">line 21</a>
+        <a href="helpers.js.html">helpers.js</a>, <a href="helpers.js.html#line45">line 45</a>
     </li></ul></dd>
     
 
@@ -303,7 +371,7 @@
 
     
 
-    <h4 class="name" id="findElementFromGroupWithText()"><span class="type-signature"></span>findElementFromGroupWithText()<span class="signature">(groupSelector, textToSearch)</span><span class="type-signature"> &rarr; {element}</span></h4>
+    <h4 class="name" id="clickWithText"><span class="type-signature"></span>clickWithText<span class="signature">(selector, text, index<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
 
     
 
@@ -315,7 +383,230 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="helpers.js.html">helpers.js</a>, <a href="helpers.js.html#line61">line 61</a>
+        <a href="helpers.js.html">helpers.js</a>, <a href="helpers.js.html#line56">line 56</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    finds the selector with text and clicks and if there are multiple elememts with the same text, it will click based on the index. Note that it waits until selector appears in the DOM.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>selector</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">Selector for the element.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>text</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">The text element.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>index</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    <code>0</code>
+                
+                </td>
+            
+
+            <td class="description last">index number</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="findElementFromGroupWithText()"><span class="type-signature"></span>findElementFromGroupWithText()<span class="signature">(groupSelector, textToSearch, index<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {element}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="helpers.js.html">helpers.js</a>, <a href="helpers.js.html#line101">line 101</a>
     </li></ul></dd>
     
 
@@ -381,7 +672,11 @@
         <th>Type</th>
 
         
+        <th>Attributes</th>
+        
 
+        
+        <th>Default</th>
         
 
         <th class="last">Description</th>
@@ -406,7 +701,19 @@
             </td>
 
             
+                <td class="attributes">
+                
 
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
             
 
             <td class="description last">The groupSelector element.</td>
@@ -429,10 +736,61 @@
             </td>
 
             
+                <td class="attributes">
+                
 
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
             
 
             <td class="description last">Enter the text to search in elements</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>index</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    <code>0</code>
+                
+                </td>
+            
+
+            <td class="description last">index number</td>
         </tr>
 
     
@@ -626,7 +984,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="helpers.js.html">helpers.js</a>, <a href="helpers.js.html#line80">line 80</a>
+        <a href="helpers.js.html">helpers.js</a>, <a href="helpers.js.html#line125">line 125</a>
     </li></ul></dd>
     
 
@@ -781,7 +1139,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="helpers.js.html">helpers.js</a>, <a href="helpers.js.html#line32">line 32</a>
+        <a href="helpers.js.html">helpers.js</a>, <a href="helpers.js.html#line72">line 72</a>
     </li></ul></dd>
     
 
@@ -1008,7 +1366,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="helpers.js.html">helpers.js</a>, <a href="helpers.js.html#line11">line 11</a>
+        <a href="helpers.js.html">helpers.js</a>, <a href="helpers.js.html#line35">line 35</a>
     </li></ul></dd>
     
 
@@ -1141,7 +1499,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="helpers.js.html">helpers.js</a>, <a href="helpers.js.html#line45">line 45</a>
+        <a href="helpers.js.html">helpers.js</a>, <a href="helpers.js.html#line85">line 85</a>
     </li></ul></dd>
     
 
@@ -1313,6 +1671,139 @@
 
 
         
+            
+
+    
+
+    <h4 class="name" id="waitForUrl"><span class="type-signature"></span>waitForUrl<span class="signature">(url)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="helpers.js.html">helpers.js</a>, <a href="helpers.js.html#line11">line 11</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    waits until the url is loaded.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>url</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The url to navigate to.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
     
 
     
@@ -1330,7 +1821,7 @@
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Tue Apr 25 2017 12:23:41 GMT+0530 (IST) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Mon Aug 20 2018 12:42:24 GMT+0530 (IST) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>

@@ -1,6 +1,6 @@
 {
   "name": "wdio-helpers",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Webdriver IO helper functions",
   "main": "build/helpers.js",
   "scripts": {
@@ -14,7 +14,9 @@
     "url": "git+https://github.com/mohithg/wdio-helpers.git"
   },
   "dependencies": {
-    "lodash": "^4.17.4",
+    "hoek": "^4.2.1",
+    "lodash": "^4.17.5",
+    "sshpk": "^1.13.2",
     "webdriverio": "^4.6.2"
   },
   "devDependencies": {
