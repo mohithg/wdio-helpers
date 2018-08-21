@@ -44,13 +44,19 @@ export const wait = (selector) => {
 
 /**
  * @function click
- * @desc clicks the selector specified and if there are multiple elememts with the same selector it will choose based on the index. Note that it waits until selector appears in the DOM.
+ * @desc clicks the selector specified and if there are multiple elememts with the same selector it will choose based on the index.
+ * Note that it waits until selector appears in the DOM. And clicks only the visible element.
  * @param {string} selector - The Selector element.
  * @param {number} [index = 0] - index number
  */
 export const click = (selector, index = 0) => {
   wait(selector);
-  $$(selector)[index].click();
+  const element = $$(selector)[index];
+  if (element.isVisible()) {
+    element.click();
+  } else {
+    console.log('Element is not visible to click');
+  }
 }
 
 /**
