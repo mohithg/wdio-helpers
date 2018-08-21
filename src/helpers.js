@@ -60,6 +60,20 @@ export const click = (selector, index = 0) => {
 }
 
 /**
+ * @function waitForVisible
+ * @desc Accepts selector to wait for the element to appear in the DOM and scroll the page to that element in the screen.
+ * and waits until the selector is visible
+ * @param {string} selector - The Selector element.
+ */
+export const waitForVisible = (selector) => {
+  browser.waitForExist(selector);
+  browser.scroll(selector);
+  browser.waitUntil(function() {
+    return $(selector).isVisible();
+  }, 100000, 'Selector is not visible');
+};
+
+/**
  * @function clickWithText
  * @desc finds the selector with text and clicks and if there are multiple elememts with the same text, it will click based on the index. Note that it waits until selector appears in the DOM.
  * @param {string} selector - Selector for the element.

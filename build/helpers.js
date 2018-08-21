@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.logConsoleOutput = exports.findElementFromGroupWithText = exports.waitForElementToGo = exports.setValue = exports.clickWithText = exports.click = exports.wait = exports.waitForUrl = exports.load = undefined;
+exports.logConsoleOutput = exports.findElementFromGroupWithText = exports.waitForElementToGo = exports.setValue = exports.clickWithText = exports.waitForVisible = exports.click = exports.wait = exports.waitForUrl = exports.load = undefined;
 
 var _lodash = require('lodash');
 
@@ -70,6 +70,20 @@ var click = exports.click = function click(selector) {
   } else {
     console.log('Element is not visible to click');
   }
+};
+
+/**
+ * @function waitForVisible
+ * @desc Accepts selector to wait for the element to appear in the DOM and scroll the page to that element in the screen.
+ * and waits until the selector is visible
+ * @param {string} selector - The Selector element.
+ */
+var waitForVisible = exports.waitForVisible = function waitForVisible(selector) {
+  browser.waitForExist(selector);
+  browser.scroll(selector);
+  browser.waitUntil(function () {
+    return $(selector).isVisible();
+  }, 100000, 'Selector is not visible');
 };
 
 /**

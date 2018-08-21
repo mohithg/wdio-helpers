@@ -22,7 +22,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#click">click</a></li><li><a href="global.html#clickWithText">clickWithText</a></li><li><a href="global.html#findElementFromGroupWithText()">findElementFromGroupWithText()</a></li><li><a href="global.html#load">load</a></li><li><a href="global.html#logConsoleOutputtype">logConsoleOutput</a></li><li><a href="global.html#setValue">setValue</a></li><li><a href="global.html#wait">wait</a></li><li><a href="global.html#waitForElementToGo">waitForElementToGo</a></li><li><a href="global.html#waitForUrl">waitForUrl</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#click">click</a></li><li><a href="global.html#clickWithText">clickWithText</a></li><li><a href="global.html#findElementFromGroupWithText()">findElementFromGroupWithText()</a></li><li><a href="global.html#load">load</a></li><li><a href="global.html#logConsoleOutputtype">logConsoleOutput</a></li><li><a href="global.html#setValue">setValue</a></li><li><a href="global.html#wait">wait</a></li><li><a href="global.html#waitForElementToGo">waitForElementToGo</a></li><li><a href="global.html#waitForUrl">waitForUrl</a></li><li><a href="global.html#waitForVisible">waitForVisible</a></li></ul>
 </nav>
 
 <div id="main">
@@ -384,7 +384,7 @@ Note that it waits until selector appears in the DOM. And clicks only the visibl
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="helpers.js.html">helpers.js</a>, <a href="helpers.js.html#line62">line 62</a>
+        <a href="helpers.js.html">helpers.js</a>, <a href="helpers.js.html#line76">line 76</a>
     </li></ul></dd>
     
 
@@ -607,7 +607,7 @@ Note that it waits until selector appears in the DOM. And clicks only the visibl
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="helpers.js.html">helpers.js</a>, <a href="helpers.js.html#line108">line 108</a>
+        <a href="helpers.js.html">helpers.js</a>, <a href="helpers.js.html#line122">line 122</a>
     </li></ul></dd>
     
 
@@ -985,7 +985,7 @@ Note that it waits until selector appears in the DOM. And clicks only the visibl
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="helpers.js.html">helpers.js</a>, <a href="helpers.js.html#line132">line 132</a>
+        <a href="helpers.js.html">helpers.js</a>, <a href="helpers.js.html#line146">line 146</a>
     </li></ul></dd>
     
 
@@ -1140,7 +1140,7 @@ Note that it waits until selector appears in the DOM. And clicks only the visibl
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="helpers.js.html">helpers.js</a>, <a href="helpers.js.html#line78">line 78</a>
+        <a href="helpers.js.html">helpers.js</a>, <a href="helpers.js.html#line92">line 92</a>
     </li></ul></dd>
     
 
@@ -1500,7 +1500,7 @@ Note that it waits until selector appears in the DOM. And clicks only the visibl
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="helpers.js.html">helpers.js</a>, <a href="helpers.js.html#line91">line 91</a>
+        <a href="helpers.js.html">helpers.js</a>, <a href="helpers.js.html#line105">line 105</a>
     </li></ul></dd>
     
 
@@ -1805,6 +1805,140 @@ Note that it waits until selector appears in the DOM. And clicks only the visibl
 
 
         
+            
+
+    
+
+    <h4 class="name" id="waitForVisible"><span class="type-signature"></span>waitForVisible<span class="signature">(selector)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="helpers.js.html">helpers.js</a>, <a href="helpers.js.html#line62">line 62</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    Accepts selector to wait for the element to appear in the DOM and scroll the page to that element in the screen.
+and waits until the selector is visible
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>selector</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The Selector element.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
     
 
     
@@ -1822,7 +1956,7 @@ Note that it waits until selector appears in the DOM. And clicks only the visibl
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Tue Aug 21 2018 13:29:19 GMT+0530 (IST) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Tue Aug 21 2018 16:29:37 GMT+0530 (IST) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>
