@@ -66,11 +66,30 @@ export const click = (selector, index = 0) => {
  * @param {string} selector - The Selector element.
  */
 export const waitForVisible = (selector) => {
-  browser.waitForExist(selector);
-  browser.scroll(selector);
+  wait(selector);
   browser.waitUntil(function() {
     return $(selector).isVisible();
   }, 100000, 'Selector is not visible');
+};
+
+/**
+ * @function waitForTextToAppear
+ * @desc Accepts selector and the text of the selector to wait for the element with that text to appear in the DOM and scroll the page to that element in the screen
+ * and waits until the selector with text is visible
+ * @param {string} selector - The Selector element.
+ * @param {string} textToSearch - Text to search in the selectors.
+ */
+const waitForTextToAppear = (selector, textToSearch) => {
+  wait(selector);
+  const group = $$(selector);
+  browser.waitUntil(function() {
+    for (let i = 0; i < group.length; i++) {
+      const element = group[i];
+      if (element.getText().includes(textToSearch)) {
+        return true;
+      }
+    }
+  }, 100000, `${selector} with ${textToSearch} is not visible`);
 };
 
 /**
