@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.logConsoleOutput = exports.findElementFromGroupWithText = exports.waitForElementToGo = exports.setValue = exports.clickWithText = exports.waitForVisible = exports.click = exports.wait = exports.waitForUrl = exports.load = undefined;
+exports.logConsoleOutput = exports.findElementFromGroupWithText = exports.waitForElementToGo = exports.setValue = exports.clickWithText = exports.waitForTextToAppear = exports.waitForVisible = exports.click = exports.wait = exports.waitForUrl = exports.load = undefined;
 
 var _lodash = require('lodash');
 
@@ -92,7 +92,7 @@ var waitForVisible = exports.waitForVisible = function waitForVisible(selector) 
  * @param {string} selector - The Selector element.
  * @param {string} textToSearch - Text to search in the selectors.
  */
-var waitForTextToAppear = function waitForTextToAppear(selector, textToSearch) {
+var waitForTextToAppear = exports.waitForTextToAppear = function waitForTextToAppear(selector, textToSearch) {
   wait(selector);
   var group = $$(selector);
   browser.waitUntil(function () {

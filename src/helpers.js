@@ -79,7 +79,7 @@ export const waitForVisible = (selector) => {
  * @param {string} selector - The Selector element.
  * @param {string} textToSearch - Text to search in the selectors.
  */
-const waitForTextToAppear = (selector, textToSearch) => {
+export const waitForTextToAppear = (selector, textToSearch) => {
   wait(selector);
   const group = $$(selector);
   browser.waitUntil(function() {
