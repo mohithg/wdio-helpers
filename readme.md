@@ -1,6 +1,8 @@
 ## WDIO Helpers
 <a href="https://mohithg.github.io/wdio-helpers/global.html">![alt wdio helpers](https://raw.githubusercontent.com/mohithg/wdio-helpers/master/docs/wdiohelpers.png)</a>
 
+- Tests to be run in <a href="https://www.browserstack.com">![alt browserstack](https://raw.githubusercontent.com/mohithg/wdio-helpers/master/docs/browserstack.png)</a>
+
 # Description
 These helper functions can be used with [WDIO](http://webdriver.io/).
 
