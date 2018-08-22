@@ -131,7 +131,7 @@ export const waitForElementToGo = (selector, index = 0) => {
   browser.waitUntil(() => {
     if (!_.isEmpty($$(selector))) {
       const element = $$(selector)[index];
-      return element.isVisible();
+      return element && element.isVisible();
     } else {
         return true;
     }
