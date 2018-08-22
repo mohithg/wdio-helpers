@@ -205,6 +205,7 @@ var logConsoleOutput = exports.logConsoleOutput = function logConsoleOutput(type
 var Helpers = {
   click: click,
   clickWithText: clickWithText,
+  waitForTextToAppear: waitForTextToAppear,
   findElementFromGroupWithText: findElementFromGroupWithText,
   load: load,
   logConsoleOutput: logConsoleOutput,

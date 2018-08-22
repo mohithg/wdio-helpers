@@ -179,6 +179,7 @@ export const logConsoleOutput = (type) => {
 const Helpers = {
   click,
   clickWithText,
+  waitForTextToAppear,
   findElementFromGroupWithText,
   load,
   logConsoleOutput,
