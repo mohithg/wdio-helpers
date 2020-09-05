@@ -38,8 +38,9 @@ export const waitForUrl = (url, timeout, regex = false) => {
  * @param {string} selector - The Selector element.
  */
 export const wait = (selector) => {
-  browser.waitForExist(selector);
-  browser.scroll(selector);
+  const element = $(selector);
+  element.waitForExist({});
+  element.moveTo({});
 }
 
 /**
@@ -52,7 +53,7 @@ export const wait = (selector) => {
 export const click = (selector, index = 0) => {
   wait(selector);
   const element = $$(selector)[index];
-  if (element.isVisible()) {
+  if (element.isDisplayedInViewport()) {
     element.click();
   } else {
     console.log('Element is not visible to click');
@@ -68,7 +69,7 @@ export const click = (selector, index = 0) => {
 export const waitForVisible = (selector) => {
   wait(selector);
   browser.waitUntil(function() {
-    return $(selector).isVisible();
+    return $(selector).isDisplayedInViewport();
   }, 100000, 'Selector is not visible');
 };
 
@@ -117,7 +118,7 @@ export const clickWithText = (selector, text, index = 0) => {
  */
 export const setValue = (selector, index = 0, value = '') => {
   wait(selector);
-  $$(selector)[index].clearElement();
+  $$(selector)[index].clearValue();
   $$(selector)[index].setValue(value);
 }
 
@@ -131,7 +132,7 @@ export const waitForElementToGo = (selector, index = 0) => {
   browser.waitUntil(() => {
     if (!_.isEmpty($$(selector))) {
       const element = $$(selector)[index];
-      return element && element.isVisible();
+      return element && element.isDisplayedInViewport();
     } else {
         return true;
     }
@@ -162,30 +163,16 @@ export const findElementFromGroupWithText = (groupSelector, textToSearch, index 
   return null;
 }
 
-/**
- * @function logConsoleOutput(type)
- * @desc Returns the console errors from browser
- * @param {string} type - Type can be INFO, WARNING, SEVERE. If no type is provided, all messages are returned.
- * @return {array} array - Returns the console errors from browser
- */
-export const logConsoleOutput = (type) => {
-  let data = browser.log('browser').value;
-  if (type) {
-    data = _.filter(data, each => each.level == type)
-  }
-  return _.map(data, field => field.message);
-};
-
 const Helpers = {
   click,
   clickWithText,
   waitForTextToAppear,
   findElementFromGroupWithText,
   load,
-  logConsoleOutput,
   setValue,
   wait,
   waitForElementToGo,
+  waitForUrl
 };
 
 export default Helpers;
