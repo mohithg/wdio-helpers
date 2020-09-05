@@ -36,6 +36,15 @@ describe ('Test Suite', function() {
 
 For a working demo see [here](https://github.com/mohithg/generic-automation).
 
+## Compatibility
+--------------------|----------------
+wdio-helpers        | WebdriverIO
+--------------------|----------------
+V 1.x               | Upto 4.x
+--------------------|----------------
+V 2.x               | 5.x and 6.x
+--------------------|-----------------
+
 ## Resources
 - [API Reference](http://mohithg.com/wdio-helpers/)
 - [Wiki](https://github.com/mohithg/wdio-helpers/wiki/API-Reference)
