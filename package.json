@@ -1,6 +1,6 @@
 {
   "name": "wdio-helpers",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Webdriver IO helper functions",
   "main": "build/helpers.js",
   "scripts": {
@@ -16,7 +16,7 @@
   "dependencies": {
     "@wdio/sync": "^6.4.6",
     "hoek": "4.2.1",
-    "lodash": "4.17.5",
+    "lodash": "4.17.20",
     "sshpk": "1.13.2",
     "webdriverio": "6.4.6"
   },
