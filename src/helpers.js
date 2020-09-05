@@ -38,8 +38,9 @@ export const waitForUrl = (url, timeout, regex = false) => {
  * @param {string} selector - The Selector element.
  */
 export const wait = (selector) => {
-  $(selector).waitForExist;
-  $(selector).moveTo();
+  const element = $(selector);
+  element.waitForExist({});
+  element.moveTo({});
 }
 
 /**
@@ -52,7 +53,7 @@ export const wait = (selector) => {
 export const click = (selector, index = 0) => {
   wait(selector);
   const element = $$(selector)[index];
-  if (element.isVisible()) {
+  if (element.isDisplayedInViewport()) {
     element.click();
   } else {
     console.log('Element is not visible to click');
@@ -68,7 +69,7 @@ export const click = (selector, index = 0) => {
 export const waitForVisible = (selector) => {
   wait(selector);
   browser.waitUntil(function() {
-    return $(selector).isVisible();
+    return $(selector).isDisplayedInViewport();
   }, 100000, 'Selector is not visible');
 };
 
@@ -117,7 +118,7 @@ export const clickWithText = (selector, text, index = 0) => {
  */
 export const setValue = (selector, index = 0, value = '') => {
   wait(selector);
-  $$(selector)[index].clearElement();
+  $$(selector)[index].clearValue();
   $$(selector)[index].setValue(value);
 }
 
@@ -131,7 +132,7 @@ export const waitForElementToGo = (selector, index = 0) => {
   browser.waitUntil(() => {
     if (!_.isEmpty($$(selector))) {
       const element = $$(selector)[index];
-      return element && element.isVisible();
+      return element && element.isDisplayedInViewport();
     } else {
         return true;
     }
