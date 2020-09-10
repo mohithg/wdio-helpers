@@ -1,6 +1,6 @@
 {
   "name": "wdio-helpers",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Webdriver IO helper functions",
   "main": "build/helpers.js",
   "scripts": {
