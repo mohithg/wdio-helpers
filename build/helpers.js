@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.logConsoleOutput = exports.findElementFromGroupWithText = exports.waitForElementToGo = exports.setValue = exports.clickWithText = exports.waitForTextToAppear = exports.waitForVisible = exports.click = exports.wait = exports.waitForUrl = exports.load = undefined;
+exports.findElementFromGroupWithText = exports.waitForElementToGo = exports.setValue = exports.clickWithText = exports.waitForTextToAppear = exports.waitForVisible = exports.click = exports.wait = exports.waitForUrl = exports.load = undefined;
 
 var _lodash = require('lodash');
 
@@ -49,8 +49,9 @@ var waitForUrl = exports.waitForUrl = function waitForUrl(url, timeout) {
  * @param {string} selector - The Selector element.
  */
 var wait = exports.wait = function wait(selector) {
-  browser.waitForExist(selector);
-  browser.scroll(selector);
+  var element = $(selector);
+  element.waitForExist({});
+  element.moveTo({});
 };
 
 /**
@@ -65,7 +66,7 @@ var click = exports.click = function click(selector) {
 
   wait(selector);
   var element = $$(selector)[index];
-  if (element.isVisible()) {
+  if (element.isDisplayedInViewport()) {
     element.click();
   } else {
     console.log('Element is not visible to click');
@@ -81,7 +82,7 @@ var click = exports.click = function click(selector) {
 var waitForVisible = exports.waitForVisible = function waitForVisible(selector) {
   wait(selector);
   browser.waitUntil(function () {
-    return $(selector).isVisible();
+    return $(selector).isDisplayedInViewport();
   }, 100000, 'Selector is not visible');
 };
 
@@ -135,7 +136,7 @@ var setValue = exports.setValue = function setValue(selector) {
   var value = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : '';
 
   wait(selector);
-  $$(selector)[index].clearElement();
+  $$(selector)[index].clearValue();
   $$(selector)[index].setValue(value);
 };
 
@@ -151,7 +152,7 @@ var waitForElementToGo = exports.waitForElementToGo = function waitForElementToG
   browser.waitUntil(function () {
     if (!_lodash2.default.isEmpty($$(selector))) {
       var element = $$(selector)[index];
-      return element && element.isVisible();
+      return element && element.isDisplayedInViewport();
     } else {
       return true;
     }
@@ -184,34 +185,16 @@ var findElementFromGroupWithText = exports.findElementFromGroupWithText = functi
   return null;
 };
 
-/**
- * @function logConsoleOutput(type)
- * @desc Returns the console errors from browser
- * @param {string} type - Type can be INFO, WARNING, SEVERE. If no type is provided, all messages are returned.
- * @return {array} array - Returns the console errors from browser
- */
-var logConsoleOutput = exports.logConsoleOutput = function logConsoleOutput(type) {
-  var data = browser.log('browser').value;
-  if (type) {
-    data = _lodash2.default.filter(data, function (each) {
-      return each.level == type;
-    });
-  }
-  return _lodash2.default.map(data, function (field) {
-    return field.message;
-  });
-};
-
 var Helpers = {
   click: click,
   clickWithText: clickWithText,
   waitForTextToAppear: waitForTextToAppear,
   findElementFromGroupWithText: findElementFromGroupWithText,
   load: load,
-  logConsoleOutput: logConsoleOutput,
   setValue: setValue,
   wait: wait,
-  waitForElementToGo: waitForElementToGo
+  waitForElementToGo: waitForElementToGo,
+  waitForUrl: waitForUrl
 };
 
 exports.default = Helpers;
