@@ -14,26 +14,27 @@
     "url": "git+https://github.com/mohithg/wdio-helpers.git"
   },
   "dependencies": {
-    "@wdio/sync": "^6.4.6",
+    "@wdio/sync": "6.4.6",
     "hoek": "4.2.1",
-    "lodash": "^4.17.20",
+    "lodash": "4.17.20",
     "sshpk": "1.13.2",
-    "typescript": "^4.1.2",
+    "typescript": "4.1.2",
     "webdriverio": "6.4.6"
   },
   "devDependencies": {
+    "@types/lodash": "4.14.165",
+    "@wdio/cli": "6.4.6",
+    "@wdio/jasmine-framework": "6.4.0",
+    "@wdio/local-runner": "6.4.6",
     "babel-cli": "6.24.1",
     "babel-plugin-transform-runtime": "6.23.0",
     "babel-preset-env": "1.4.0",
     "babel-preset-es2015": "6.24.1",
-    "babel-register": "^6.24.1",
+    "babel-register": "6.24.1",
     "babel-runtime": "6.23.0",
     "docdash": "0.4.0",
     "jsdoc": "3.4.3",
-    "selenium-standalone": "6.19.0",
-    "@wdio/cli": "^6.4.6",
-    "@wdio/jasmine-framework": "^6.4.0",
-    "@wdio/local-runner": "^6.4.6"
+    "selenium-standalone": "6.19.0"
   },
   "keywords": [
     "wdio",

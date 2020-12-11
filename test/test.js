@@ -1,17 +1,17 @@
 import {click,
     clickWithText,
     waitForTextToAppear,
-    findElementFromGroupWithText,
     load,
     setValue,
-    wait,
+    waitForVisible,
     waitForElementToGo,
-    waitForUrl} from '../src/helpers';
+    waitForUrl} from '../build/helpers';
 
 describe ('Google', () => {
     it('Navigate to gooole', () => {
         load('https://webdriver.io');
         click('.slidingNav');
+        waitForVisible('a');
         clickWithText('a', 'API');
         waitForTextToAppear("h1", "API Docs");
         waitForElementToGo('h1', 0);
