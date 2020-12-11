@@ -32,7 +32,16 @@ exports.config = {
     //
     capabilities: [{
         browserName: 'chrome',
-        loggingPrefs: { browser: 'ALL', driver: 'ALL', performance: 'ALL' }
+        loggingPrefs: { browser: 'ALL', driver: 'ALL', performance: 'ALL' },
+        'goog:chromeOptions': {
+            // to run chrome headless the following flags are required
+            // (see https://developers.google.com/web/updates/2017/04/headless-chrome)
+            args: ['--headless', '--disable-gpu', '--no-sandbox', '--disable-dev-shm-usage'],
+            prefs: {
+                'plugins.always_open_pdf_externally': true,
+                "profile.default_content_settings.popups": 0,
+            }
+        }
     }],
     //
     // ===================
