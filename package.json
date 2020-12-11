@@ -1,11 +1,11 @@
 {
   "name": "wdio-helpers",
-  "version": "2.0.2",
+  "version": "3.0.0-beta",
   "description": "Webdriver IO helper functions",
   "main": "build/helpers.js",
   "scripts": {
     "test": "./node_modules/.bin/wdio test/wdio.conf.js",
-    "build": "rm -rf build && mkdir build && node_modules/.bin/babel src/helpers.js > build/helpers.js",
+    "build": "rm -rf build && mkdir build && tsc",
     "generate_doc": "node_modules/.bin/jsdoc -c jsdoc.conf.json * -t node_modules/docdash",
     "generate_api_doc": "jsdoc2md src/helpers.js"
   },
@@ -16,8 +16,9 @@
   "dependencies": {
     "@wdio/sync": "^6.4.6",
     "hoek": "4.2.1",
-    "lodash": "4.17.20",
+    "lodash": "^4.17.20",
     "sshpk": "1.13.2",
+    "typescript": "^4.1.2",
     "webdriverio": "6.4.6"
   },
   "devDependencies": {
