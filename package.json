@@ -6,7 +6,7 @@
   "scripts": {
     "test": "./node_modules/.bin/wdio test/wdio.conf.js",
     "build": "rm -rf build && mkdir build && tsc",
-    "generate_doc": "node_modules/.bin/typedoc --out docs src"
+    "generate_doc": "node_modules/.bin/typedoc --theme minimal --out docs src"
   },
   "repository": {
     "type": "git",
