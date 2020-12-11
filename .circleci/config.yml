@@ -17,7 +17,13 @@ jobs:
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
 
-      - run: npm install
+      - run:
+          name: npm install
+          command: npm install
+
+      - run:
+          name: Build
+          command: npm run build
 
       - save_cache:
           paths:
@@ -32,6 +38,12 @@ jobs:
     steps:
       - attach_workspace:
           at: ~/repo
+      - run:
+          name: npm install
+          command: npm install
+      - run:
+          name: Build
+          command: npm run build
       - run:
           name: Authenticate with registry
           command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/repo/.npmrc
